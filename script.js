@@ -2,7 +2,7 @@ const screen1 = document.querySelector(".screen1")
 const screen2 = document.querySelector(".screen2")
 
 let machineNumber = Math.round(Math.random()*10)
-let tries = 1
+let attempts = 1
 console.log('aaaaa')
 console.log(machineNumber)
 const btnTry = document.querySelector('button#btnTry')
@@ -21,11 +21,11 @@ function handleTryClick(event){
         
         toggleScreen()
         
-        if(tries==1){
+        if(attempts==1){
             screen2.querySelector('h2').innerHTML = (`Acertou em 1 tentativa!`)
         }
         else{
-            screen2.querySelector('h2').innerHTML = (`Acertou em ${tries} tentativas!`)
+            screen2.querySelector('h2').innerHTML = (`Acertou em ${attempts} tentativas!`)
         }
     }
     inputNumber.value = ""
@@ -37,7 +37,7 @@ btnTry.addEventListener('click', handleTryClick)
 
 function handleResetClick(){
     toggleScreen()
-    tries = 1
+    attempts = 1
     machineNumber = Math.round(Math.random()*10)
 }
 function toggleScreen(){
